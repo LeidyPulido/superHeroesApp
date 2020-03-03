@@ -1,7 +1,7 @@
-export const addItem = Heroes=>{
+export const addItem = Hero=>{
     return{
         type:"ADD_ITEM",
-        Heroes
+        Hero
     }
 }
 export const setfilter = filter=>{

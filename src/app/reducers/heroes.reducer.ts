@@ -14,7 +14,7 @@ export const  vibilityFilter=(state='SHOW_ALL', action)=>{
 export const allHeroes = (state=[],action)=>{
     switch (action.type) {
         case 'ADD_ITEM':
-            return state=[...state,action.Heroe]
+            return state=[...state,action.Hero]
         default:
             return state
     }
