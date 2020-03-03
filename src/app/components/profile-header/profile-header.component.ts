@@ -1,6 +1,6 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { AuthFbService} from './../../services'
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({

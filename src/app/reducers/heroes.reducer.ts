@@ -1,5 +1,5 @@
-import {storagePokemon} from './../interfaces'
-import {combineReducers,createStore,Reducer} from 'redux'
+import { storageHeroes } from '../interfaces'
+import { combineReducers, createStore, Reducer } from 'redux'
 
 export const  vibilityFilter=(state='SHOW_ALL', action)=>{
     switch (action["type"]) {
@@ -11,13 +11,13 @@ export const  vibilityFilter=(state='SHOW_ALL', action)=>{
 
 }
 
-export const allPokemons=(state=[],action)=>{
+export const allHeroes = (state=[],action)=>{
     switch (action.type) {
         case 'ADD_ITEM':
-            return state=[...state,action.Pokemon]
+            return state=[...state,action.Heroe]
         default:
             return state
     }
 }
 
-export const reducerPokemon: Reducer<storagePokemon> =combineReducers({vibilityFilter,allPokemons})
+export const reducerHeroes: Reducer<storageHeroes> = combineReducers({vibilityFilter, allHeroes})

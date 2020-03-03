@@ -1,10 +1,10 @@
-export const addItem=Pokemon=>{
+export const addItem = Heroes=>{
     return{
         type:"ADD_ITEM",
-        Pokemon
+        Heroes
     }
 }
-export const setfilter=filter=>{
+export const setfilter = filter=>{
     return{
         type:"SET_VISIBILITY_FILTER",
         filter

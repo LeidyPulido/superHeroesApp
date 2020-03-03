@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable} from 'rxjs'
-import {petitionservice,PokemonService} from './../../services'
-import {createStore,Store} from 'redux'
-import {reducerPokemon,vibilityFilter} from './../../reducers/pokemon.reducer'
-import {PokemonHome,storagePokemon} from './../../interfaces'
-import {addItem} from './../../reducers/actions'
+import { Observable } from 'rxjs'
+import { petitionservice, HeroesService } from './../../services'
+import { createStore, Store } from 'redux'
+import { reducerHeroes, vibilityFilter } from '../../reducers/heroes.reducer'
+import { HeroesHome, storageHeroes } from './../../interfaces'
+import { addItem } from './../../reducers/actions'
 import { filter, map } from 'rxjs/operators';
-import {fromEvent} from 'rxjs';
-import {MatDialog} from '@angular/material/dialog';
-import {PokemonInfoComponent} from './../../components'
+import { fromEvent } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { HeroeInfoComponent } from './../../components'
 
 @Component({
   selector: 'app-home',
@@ -17,47 +17,41 @@ import {PokemonInfoComponent} from './../../components'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public api:petitionservice,public pokemon:PokemonService,public dialog: MatDialog) { }
-  pokemonlist:Observable<any>;
-  store:Store<storagePokemon>
-  pokemones:PokemonHome[];
-  
+  constructor(public api: petitionservice, public heroe: HeroesService, public dialog: MatDialog) { }
+  heroelist: Observable<any>;
+  store: Store<storageHeroes>
+  heroes: HeroesHome[];
+
   ngOnInit() {
-    this.store=createStore(reducerPokemon);
+    this.store = createStore(reducerHeroes);
     this.store.subscribe(
-      ()=>{
-        this.pokemones=this.store.getState().allPokemons
-      }
-    )
-    const documentEl=document.documentElement
-    fromEvent(document,'scroll').pipe(
-      map(()=>documentEl.scrollTop),
-      map(event=>{
-        const docHeight=documentEl.scrollHeight-documentEl.clientHeight;
-        return (event / docHeight) * 100;
-      }),
-      filter(evt=>evt==100)
-    ).subscribe(
-      event=>{
-        this.getList()
+      () => {
+        this.heroes = this.store.getState().allHeroes
+        console.log(this.heroes)
       }
     )
     this.getList()
   }
 
-  addPokemon(pokemon:PokemonHome){
-    this.store.dispatch(addItem(pokemon))
+  addHeroe(heroe: HeroesHome) {
+    this.store.dispatch(addItem(heroe))
   }
 
-  getList(){
-    this.pokemon.getPokemonsHome().toPromise().then(
-      (pokemons)=>{console.log(pokemons);pokemons.map(pokemon=>this.addPokemon(pokemon))}
+  getList() {
+    this.heroe.getHeroesHome().toPromise().then(
+      (heroes) => {
+        for (let hero of heroes){
+
+          console.log(hero)
+          this.addHeroe(hero)
+        }
+      }
     )
   }
-  selectPokemon(pokemon:PokemonHome){
-      this.dialog.open(PokemonInfoComponent, {
-        width: '700px',
-        data: pokemon
-      });
+  selectHeroe(heroe: HeroesHome) {
+    this.dialog.open(HeroeInfoComponent, {
+      width: '700px',
+      data: heroe
+    });
   }
 }

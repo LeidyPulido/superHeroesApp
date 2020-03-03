@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { PokemonInfoComponent } from './pokemon-info.component';
+import { HeroeInfoComponent } from './heroe-info.component';
 import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
   {
     path:'',
-    component:PokemonInfoComponent
+    component: HeroeInfoComponent
   }
 ];
 
@@ -17,4 +17,4 @@ const routes: Routes = [
   ],
   exports:[RouterModule]
 })
-export class PokemonInfoRouterModule { }
+export class HeroeInfoRouterModule { }

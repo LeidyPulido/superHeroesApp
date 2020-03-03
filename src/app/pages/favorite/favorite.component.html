@@ -1,12 +1,12 @@
 <div class="content">
-    <mat-card *ngFor="let pokemon of list | async" class="card" (click)="selectPokemon(pokemon)">
+    <mat-card *ngFor="let heroe of list | async" class="card" (click)="selectHeroe(heroe)">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{pokemon.name}}</mat-card-title>
+        <mat-card-title>{{heroe.name}}</mat-card-title>
       </mat-card-header>
       <div class="containe-img">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{pokemon.id}}.png" alt="{{pokemon.name}}">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt="{{pokemon.name}}">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/heroe/back/{{heroe.id}}.png" alt="{{heroe.name}}">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/heroe/{{heroe.id}}.png" alt="{{heroe.name}}">
       </div>
       <mat-card-actions>
         <button mat-icon-button class="button"><i class="far fa-heart"></i></button>

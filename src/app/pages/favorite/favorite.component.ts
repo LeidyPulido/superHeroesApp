@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {petitionservice,PokemonService,AuthFbService} from '../../services'
-import {PokemonHome} from '../../interfaces'
+import {petitionservice,HeroesService,AuthFbService} from '../../services'
+import {HeroesHome} from '../../interfaces'
 import {MatDialog} from '@angular/material/dialog';
-import {PokemonInfoComponent} from '../../components'
+import {HeroeInfoComponent} from '../../components'
 
 @Component({
   selector: 'app-favorite',
@@ -12,18 +12,18 @@ import {PokemonInfoComponent} from '../../components'
 export class FavoriteComponent implements OnInit {
 
   list
-  constructor(public fb:AuthFbService,public api:petitionservice,public pokemon:PokemonService,public dialog: MatDialog) { }
+  constructor(public fb:AuthFbService,public api:petitionservice,public heroe:HeroesService,public dialog: MatDialog) { }
   
   ngOnInit() {
-    this.list=this.api.getPokemonsFavorite(this.fb.user["email"])
+    this.list=this.api.getHeroeFavorite(this.fb.user["email"])
   }
 
  
 
-  selectPokemon(pokemon:PokemonHome){
-      this.dialog.open(PokemonInfoComponent, {
+  selectHeroe(heroe:HeroesHome){
+      this.dialog.open(HeroeInfoComponent, {
         width: '700px',
-        data: pokemon
+        data: heroe
       });
   }
 }

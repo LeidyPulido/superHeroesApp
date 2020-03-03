@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pokemonApp": {
+    "superHeroesApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pokemonApp",
+            "outputPath": "dist/superHeroesApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pokemonApp:build"
+            "browserTarget": "superHeroesApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pokemonApp:build:production"
+              "browserTarget": "superHeroesApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pokemonApp:build"
+            "browserTarget": "superHeroesApp:build"
           }
         },
         "test": {
@@ -111,16 +111,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pokemonApp:serve"
+            "devServerTarget": "superHeroesApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pokemonApp:serve:production"
+              "devServerTarget": "superHeroesApp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "pokemonApp"
+  "defaultProject": "superHeroesApp"
 }

@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule,MatIconModule,MatToolbarModule} from '@angular/material';
 import {MatListModule} from '@angular/material/list';
-import {petitionservice,AuthFbService,PokemonService} from './services'
+import {petitionservice,AuthFbService,HeroesService} from './services'
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -34,7 +33,7 @@ import {ProfileHeaderModule} from './components';
     AngularFirestoreModule,
     MatButtonModule
   ],
-  providers: [petitionservice, AuthFbService,PokemonService],
+  providers: [petitionservice, AuthFbService,HeroesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

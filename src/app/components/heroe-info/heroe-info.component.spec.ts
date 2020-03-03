@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HeroeInfoComponent } from './heroe-info.component';
 
-import { PokemonInfoComponent } from './pokemon-info.component';
-
-describe('PokemonInfoComponent', () => {
-  let component: PokemonInfoComponent;
-  let fixture: ComponentFixture<PokemonInfoComponent>;
+describe('HeroeInfoComponent', () => {
+  let component: HeroeInfoComponent;
+  let fixture: ComponentFixture<HeroeInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonInfoComponent ]
+      declarations: [ HeroeInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PokemonInfoComponent);
+    fixture = TestBed.createComponent(HeroeInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
